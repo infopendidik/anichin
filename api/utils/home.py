@@ -19,8 +19,8 @@ class Home(Parsing):
             type = item.find("div", {"class": "typez"})
             eps = item.find("span", {"class": "epx"})
             thumbnail = item.find("img", {"src": True})
-            thumbnail = thumbnail.get("data-lazy-src", thumbnail.get("src"))
-            url = item.find("a", {"title": True}).get("href")
+            thumbnail = thumbnail.get("data-lazy-src", thumbnail.get("data-src"))
+            url = item.find("bsx", {"title": True}).get("href")
             slug = urlparse(url).path
             slug = slug.split("/")[-2] if slug.endswith("/") else slug.split("/")[-1]
             return dict(
